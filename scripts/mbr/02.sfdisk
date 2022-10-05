@@ -1,0 +1,9 @@
+label: dos
+label-id: 0x1bf6247b
+device: /dev/sdb
+unit: sectors
+sector-size: 512
+
+/dev/sdb2 : start=       22528, size=       20480, type=83
+/dev/sdb3 : start=       43008, size=       20480, type=5, bootable
+/dev/sdb4 : start=       63488, size=       38912, type=b
