@@ -1,9 +1,3 @@
-<style>
-table {
-    width: 100%
-}
-</style>
-
 # Description
 
 Generates .dd files with different configurations to test disk-detective
