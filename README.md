@@ -14,7 +14,7 @@ Generates .dd files with different configurations to test disk-detective
 **CMD:** 
 
 ```sh
-bash disk-detective-data.sh
+sudo bash disk-detective-data.sh
 ```
 
 Creates .dd files in the following location:
