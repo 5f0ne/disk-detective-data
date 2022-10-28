@@ -2,7 +2,7 @@
 
 dc3dd wipe=/dev/sdb
 
-sfdisk /dev/sdb < ./scripts/fat/01.sfdisk
+sfdisk /dev/sdb < ./scripts/ext/01.sfdisk
 
 mkfs.ext2 /dev/sdb1
 mkfs.ext3 /dev/sdb2

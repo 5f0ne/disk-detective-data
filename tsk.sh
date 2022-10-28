@@ -41,8 +41,8 @@ echo "---------------------"
 
 mmls data/ext/01.dd > tsk/ext/mmls.txt
 fsstat -o 2048 data/ext/01.dd > tsk/ext/002-fsstat.txt
-fsstat -o 12288 data/ext/01.dd > tsk/ext/003-fsstat.txt
-fsstat -o 32768 data/ext/01.dd > tsk/ext/004-fsstat.txt
+fsstat -o 22528 data/ext/01.dd > tsk/ext/003-fsstat.txt
+fsstat -o 43008 data/ext/01.dd > tsk/ext/004-fsstat.txt
 
 echo "Done"
 echo "---------------------"
