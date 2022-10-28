@@ -1,7 +1,9 @@
+tsk/
 env/
 dist/
 data
 build/
 *-setup-*
+parttypes
 **/__pycache__
 **/*.egg-info/

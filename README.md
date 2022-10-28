@@ -22,84 +22,63 @@ Creates .dd files in the following location:
 disk-detective-data
 ├── data
 │   └── mbr
-│       ├── 01.dd
-│       ├── 02.dd
-│       ├── 03.dd
-│       ├── 04.dd
-│       ├── 05.dd
-│       ├── 06.dd
-│       └── 07.dd
+│   │   ├── 01.dd
+│   │   ├── 02.dd
+│   │   ├── 03.dd
+│   │   ├── 04.dd
+│   │   ├── 05.dd
+│   │   ├── 06.dd
+│   │   └── 07.dd
+|   │
+│   └── ext
+│   │   └── 01.dd
+|   │
+│   └── fat
+│   │   └── 01.dd
+|   │
+|   └── ntfs
+│       └── 01.dd
 ```
 
-# Available Data
+# Information
 
-## MBR
+To get more information of the images use `tsk.sh`:
 
-- Sector size: 512 Byte
-- No of sectors: 102400
+```bash
+pip install sleuthkit
+sudo bash tsk.sh
+```
 
-**data/mbr/01.dd - 4 Partition Entries**
+Creates the following directory structure with TSK result files:
 
-| # | Partition Type | Start | Size | Bootable |
-|:---:|---|---:|:---:|:---:|
-| 1 | NTFS  (07) | 2048 | 20480 | 80 |
-| 2 | ext4  (83) | 22528 | 20480 | 00 |
-| 3 | FAT16 (06) | 43008 | 20480 | 00 |
-| 4 | FAT32 (0b) | 63488 | 38912 | 00 |
+```
+disk-detective-data/tsk
+├───ext
+│       002-fsstat.txt
+│       003-fsstat.txt
+│       004-fsstat.txt
+│       mmls.txt
+│       
+├───fat
+│       002-fsstat.txt
+│       003-fsstat.txt
+│       004-fsstat.txt
+│       mmls.txt
+│       
+├───mbr
+│       01-mmls.txt
+│       02-mmls.txt
+│       03-mmls.txt
+│       04-mmls.txt
+│       05-mmls.txt
+│       06-mmls.txt
+│       07-mmls.txt
+│
+└───ntfs
+        002-fsstat.txt
+        mmls.txt
+```
 
-**data/mbr/02.dd - 3 Partition Entries, First Empty**
-
-| # | Partition Type | Start | Size | Bootable |
-|:---:|---|:---:|:---:|:---:|
-| 1 | - | - | - | - |
-| 2 | ext4  (83) | 22528 | 20480 | 00 |
-| 3 | Extended (05) | 43008 | 20480 | 80 |
-| 4 | FAT32 (0b) | 63488 | 38912 | 00 |
-
-**data/mbr/03.dd - 3 Partition Entries, Second Empty**
-
-| # | Partition Type | Start | Size | Bootable |
-|:---:|---|:---:|:---:|:---:|
-| 1 |  NTFS  (07) | 2048 | 20480 | 80 |
-| 2 | - | - | - | - |
-| 3 | Extended (05) | 43008 | 20480 | 00 |
-| 4 | FAT32 (0b) | 63488 | 38912 | 00 |
-
-**data/mbr/04.dd - 3 Partition Entries, Fourth Empty**
-
-| # | Partition Type | Start | Size | Bootable |
-|:---:|---|:---:|:---:|:---:|
-| 1 |  NTFS  (07) | 2048 | 20480 | 80 |
-| 2 | ext4  (83) | 22528 | 20480 | 00 |
-| 3 | FAT16 (06) | 43008 | 20480 | 00 |
-| 4 | - | - | - | - |
-
-**data/mbr/05.dd - 1 Partition Entry, Position 1**
-
-| # | Partition Type | Start | Size | Bootable |
-|:---:|---|:---:|:---:|:---:|
-| 1 |  NTFS  (07) | 2048 | 20480 | 80 |
-| 2 | - | - | - | - |
-| 3 | - | - | - | - |
-| 4 | - | - | - | - |
-
-**data/mbr/06.dd - 1 Partition Entry, Position 2**
-
-| # | Partition Type | Start | Size | Bootable |
-|:---:|---|:---:|:---:|:---:|
-| 1 | - | - | - | - |  
-| 2 | FAT32  (0b) | 22528 | 20480 | 80 |
-| 3 | - | - | - | - |
-| 4 | - | - | - | - |
-
-**data/mbr/07.dd - 1 Partition Entry, Position 4**
-
-| # | Partition Type | Start | Size | Bootable |
-|:---:|---|:---:|:---:|:---:|
-| 1 | - | - | - | - |  
-| 2 | - | - | - | - |  
-| 3 | - | - | - | - |
-| 4 | ext4 (83) | 63488 | 38912 | 80 |
 
 # License
 
